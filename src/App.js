@@ -1,25 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
+import CampusCard from './CampusCard.jsx';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = "campuses-container">
+      <CampusCard name="Hunter" id="0" image="https://www.voicesofyouth.org/sites/default/files/images/2019-03/school.jpg" numStudents="1000" />
+      <CampusCard name="Hunter1" id="1" image="https://www.voicesofyouth.org/sites/default/files/images/2019-03/school.jpg" numStudents="1000" />
+      <CampusCard name="Hunter2" id="0" image="https://www.voicesofyouth.org/sites/default/files/images/2019-03/school.jpg" numStudents="1000" />
     </div>
+
   );
 }
 
