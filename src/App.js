@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import CampusCard from './CampusCard.jsx';
 import './App.css';
+import './CampusCard.css';
 
 function App() {
   return (
