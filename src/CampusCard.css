@@ -1,9 +1,36 @@
-.campuses-container{
+.campuses-container {
     display: flex;
     width: 80%;
     flex-wrap: wrap;
     justify-content: center;
 
-
     background-color: gold;
+}
+
+.campus-card {
+    border: 1px solid black;
+    margin: 20px;
+    display: grid;
+    grid-template-areas:
+        "img title"
+        "img num"
+        "img bot";
+}
+
+.campus-card-img {
+    width: 200px;
+    height: auto;
+    grid-area: img;
+}
+
+.campus-card-title {
+    grid-area: title;
+}
+
+.campus-card-num {
+    grid-area: num;
+}
+
+.campus-card-bot {
+    grid-area: bot;
 }
