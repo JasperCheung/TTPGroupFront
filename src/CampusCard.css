@@ -1,14 +1,7 @@
-.campuses-container {
-    display: flex;
-    width: 80%;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: gold;
-}
-
 .campus-card {
     border: 1px solid black;
     margin: 20px;
+    padding: 10px;
     display: grid;
     grid-template-areas:
         "img title"
@@ -19,11 +12,16 @@
 .campus-card-img {
     width: 200px;
     height: auto;
+    margin-right: 10px;
     grid-area: img;
 }
 
 .campus-card-title {
     grid-area: title;
+}
+
+.campus-card-title h3 {
+    margin: 0px;
 }
 
 .campus-card-num {
