@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Share.css'
 import axios from 'axios';
 
 class NewCampus extends Component {
@@ -61,7 +62,9 @@ class NewCampus extends Component {
     return (
       <div>
         <h1>Creating New Campus</h1>
-        { this.state.errors }
+        <div className="errors">
+          { this.state.errors }
+        </div>
         <form onSubmit={this.handleSubmit}>
           <table>
             <tbody>
@@ -83,14 +86,14 @@ class NewCampus extends Component {
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" /></td>
+                <td><input className="button" type="submit" /></td>
               </tr>
             </tbody>
           </table>
         </form>
       </div>
       );
-  }
+}
 };
 
 export default NewCampus;

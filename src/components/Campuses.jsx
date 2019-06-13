@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CampusCard from './CampusCard.jsx';
 import { Link } from 'react-router-dom';
-import './Campuses.css';
+import './Share.css';
 import { connect } from 'react-redux';
 import { fetchCampusesThunk } from '../thunks';
 
@@ -13,11 +13,11 @@ class Campuses extends Component {
   render = () => {
     return (
       <div>
-        <div className="campus-header">
+        <div className="flex-header">
           <span>Campuses</span>
-          <Link className="new-campus-button" to="/new/campuses">Add Campus</Link>
+          <Link className="button" to="/new/campuses">Add Campus</Link>
         </div>
-        <div className="campuses-container">
+        <div className="flex-container">
           {
           this.props.campuses.length > 0 ?
           this.props.campuses.map((campus) => <CampusCard key={campus.id} { ...campus } />) :
