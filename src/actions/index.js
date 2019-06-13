@@ -1,0 +1,4 @@
+export const FETCH_ALL_STUDENTS = 'students/FETCH_ALL_STUDENTS';
+export const FETCH_SINGLE_STUDENT = 'students/FETCH_SINGLE_STUDENT';
+export const FETCH_ALL_CAMPUSES = 'campuses/FETCH_ALL_CAMPUSES';
+export const FETCH_SINGLE_CAMPUS = 'campuses/FETCH_SINGLE_STUDENT';
