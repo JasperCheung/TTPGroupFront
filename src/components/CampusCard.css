@@ -1,12 +1,13 @@
 .campus-card {
+    width: 40%;
     border: 1px solid black;
     margin: 20px;
     padding: 10px;
     display: grid;
     grid-template-areas:
-        "img title"
-        "img num"
-        "img bot";
+    "img title"
+    "img num"
+    "img bot";
 }
 
 .campus-card-img {
