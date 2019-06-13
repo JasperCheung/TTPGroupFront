@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
+import StudentCard from './StudentCard';
+import { Link } from 'react-router-dom';
+import './Students.css';
+import { connect } from 'react-redux';
+import { fetchStudentsThunk } from '../thunks';
 
 class Students extends Component {
+  componentDidMount() {
+    this.props.fetchAllStudents();
+  }
+
   render() {
     return (
       <div>
-          <p>Listing all students</p>
+        <div className="student-header">
+          <span>Students</span>
+          <Link className="new-student-button" to="/new/students">New Student</Link>
+        </div>
+        <div className="students-container">
+          { this.props.students.map((student) => <StudentCard key={student.id} { ...student } />) }
+        </div>
       </div>
-    );
+      );
   } 
 }
 
-export default Students;
+const mapStateToProps = (state) => {
+  return {
+    students: state
+  };
+};
+
+const mapDispatchToProps = (dispatch) => { 
+  return {
+    fetchAllStudents: () => dispatch(fetchStudentsThunk())
+  }; 
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Students);
