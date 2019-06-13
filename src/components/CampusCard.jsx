@@ -26,7 +26,7 @@ class CampusCard extends Component {
 }
 
 CampusCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   numStudents: PropTypes.number.isRequired
