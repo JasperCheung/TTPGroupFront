@@ -24,7 +24,7 @@ class NewCampus extends Component {
       if (checkValue(this.state.campusImage)) {
         params.image = this.state.campusImage;
       }
-      axios.post('http://localhost:5000/api/campuses', { params: params });
+      axios.post('http://localhost:5000/api/campuses',params);
     } else {
       console.log("invalid new campus");
       let errors = [];
