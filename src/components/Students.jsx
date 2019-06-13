@@ -18,7 +18,11 @@ class Students extends Component {
           <Link className="button" to="/new/students">New Student</Link>
         </div>
         <div className="flex-container">
-          { this.props.students.map((student) => <StudentCard key={student.id} { ...student } />) }
+          {
+          this.props.students.length > 0 ?
+          this.props.students.map((student) => <StudentCard key={student.id} { ...student } />) :
+          <span>No students to show</span>
+          }
         </div>
       </div>
       );

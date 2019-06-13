@@ -9,7 +9,7 @@ class CampusCard extends Component {
   render(){
     return (
       <div className="campus-card">
-        <img className="campus-card-img" src={this.props.image} alt={this.props.name + "image"} />
+        <img className="campus-card-img" src={this.props.image} alt={this.props.name} />
         <Link className="campus-card-title" to={`/campuses/${this.props.id}`}>
             <h3>{this.props.name}</h3>
         </Link>

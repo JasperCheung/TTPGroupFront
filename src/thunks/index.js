@@ -41,7 +41,7 @@ export const fetchStudentsThunk = () => (dispatch) => {
 
 export const fetchStudentThunk = (studentId) => (dispatch) => {
   return axios
-    .get(`http://localhost:5000/api/students/${studentId}`)
+    .get(`http://localhost:5000/api/students/${studentId}/campus`)
     .then(res => res.data)
     .then(student => dispatch(fetchStudent(student)))
     .catch(err => console.log(err));
@@ -57,7 +57,7 @@ export const fetchCampusesThunk = () => (dispatch) => {
 
 export const fetchCampusThunk = (campusId) => (dispatch) => {
   return axios
-    .get(`http://localhost:5000/api/campuses/${campusId}`)
+    .get(`http://localhost:5000/api/campuses/${campusId}/students`)
     .then(res => res.data)
     .then(campus => dispatch(fetchCampus(campus)))
     .catch(err => console.log(err));

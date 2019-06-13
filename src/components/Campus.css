@@ -1,0 +1,31 @@
+.campus-info {
+  margin: 40px;
+  display: grid;
+  grid-template-areas: 
+  "img name"
+  "img description"
+  "bot bot";
+}
+
+.campus-img {
+  max-width: 80%;
+  grid-area: img;
+}
+
+.campus-img img {
+  max-width: 100%;
+}
+
+.campus-name {
+  grid-area: name;
+}
+
+.campus-description {
+  grid-area: description;
+}
+
+.campus-bot {
+  grid-area: bot;
+  display: flex;
+  justify-content: space-between;
+}

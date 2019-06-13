@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './Share.css'
 import axios from 'axios';
 
 class NewCampus extends Component {
   constructor(props) {
     super(props);
-    this.state = {errors: []};
+    this.state = {errors: [], redirect: false};
   }
 
   handleSubmit = (e) => {
@@ -25,7 +26,8 @@ class NewCampus extends Component {
       if (checkValue(this.state.campusImage)) {
         params.image = this.state.campusImage;
       }
-      axios.post('http://localhost:5000/api/campuses',params);
+      axios.post('http://localhost:5000/api/campuses',params)
+        .then(() => this.setState({redirect:true}));
     } else {
       console.log("invalid new campus");
       let errors = [];
@@ -61,6 +63,7 @@ class NewCampus extends Component {
   render = () => {
     return (
       <div>
+        { this.state.redirect ? <Redirect to="/campuses" /> : <div /> }
         <h1>Creating New Campus</h1>
         <div className="errors">
           { this.state.errors }
