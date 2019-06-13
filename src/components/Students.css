@@ -1,21 +1,21 @@
-.campuses-container{
+.students-container{
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.campus-header {
+.student-header {
     margin: 20px;
     display: flex;
     justify-content: space-between;
 }
 
-.campus-header span {
+.student-header span {
     font-size: 48px;
     font-weight: bold;
 }
 
-.new-campus-button {
+.new-student-button {
     cursor: pointer;
     color: white;
     background: #2ecefe;
