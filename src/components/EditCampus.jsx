@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StudentRow from './StudentRow';
 import { Redirect } from 'react-router-dom';
 import './Share.css'
 import axios from 'axios';
@@ -11,7 +12,7 @@ class EditCampus extends Component {
     this.state = {
       errors: [], 
       messages: [], 
-      redirect: false
+      redirect: null
     };
   }
 
@@ -33,7 +34,6 @@ class EditCampus extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({errors:[]});
-    console.log(this.state);
     let checkValue = (s) => s && s !== "";
     if (this.state && 
       checkValue(this.state.campusName) && 
@@ -47,8 +47,7 @@ class EditCampus extends Component {
         description: this.state.campusDescription
       };
       axios.put(`http://localhost:5000/api/campuses/${this.props.match.params.id}`, params)
-        .then(() => this.setState({messages:["Saved"]}))
-        .then(() => setTimeout(() => this.setState({messages:[]}), 3000));
+        .then(() => this.setState({redirect:<Redirect to={`/campuses/${this.props.campus.id}`} />}));
     } else {
       let errors = [];
       if (!checkValue(this.state.campusName)) {
@@ -86,8 +85,8 @@ class EditCampus extends Component {
   render = () => {
     return (
       <div>
-        { this.state.redirect ? <Redirect to="/campuses" /> : <div /> }
-        <h1>Editing Campus</h1>
+        { this.state.redirect ? this.state.redirect : <div /> }
+        <h1>Edit Campus</h1>
         <div className="errors">
           { this.state.errors.map((s, i) => <p key={i}>{s}</p>) }
         </div>
@@ -120,6 +119,12 @@ class EditCampus extends Component {
             </tbody>
           </table>
         </form>
+        <h2>Students on Campus</h2>
+        { 
+        this.props.campus.students && this.props.campus.students.length > 0 ?
+        this.props.campus.students.map((student, i) => <StudentRow key={i} {...student} />) :
+        <p>No students to show</p>
+        }
       </div>
       );
 }
