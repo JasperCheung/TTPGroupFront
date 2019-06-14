@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 class DeleteCampus extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      campusId: props.match.params.id
-    };
+    this.state = {redirect: false};
   }
 
   render = () => {
+    axios.delete(`http://localhost:5000/api/campuses/${this.props.match.params.id}`)
+      .then(() => this.setState({redirect:true}));
     return (
-      <div>
-        <h1>Deleting Campus { this.state.campusId }</h1>
-      </div>
-      );
+      this.state.redirect ? <Redirect to="/campuses" /> : <div /> 
+    );
   }
 };
 

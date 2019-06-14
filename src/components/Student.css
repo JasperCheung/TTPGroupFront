@@ -1,0 +1,32 @@
+.student-info {
+  margin: 40px;
+  display: grid;
+  grid-template-areas: 
+  "img name"
+  "img gpa"
+  "img bot";
+}
+
+.student-img {
+  max-width: 80%;
+  grid-area: img;
+}
+
+.student-img img {
+  max-width: 100%;
+}
+
+.student-name {
+  grid-area: name;
+}
+
+.student-gpa {
+  grid-area: gpa;
+}
+
+.student-bot {
+  grid-area: bot;
+  display: flex;
+  justify-content: space-between;
+}
+

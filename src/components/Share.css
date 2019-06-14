@@ -1,25 +1,38 @@
-.campuses-container{
+.flex-container{
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.campus-header {
+.flex-container div {
+  margin: 20px;
+}
+
+.flex-header {
     margin: 20px;
     display: flex;
     justify-content: space-between;
 }
 
-.campus-header span {
+.flex-header span {
     font-size: 48px;
     font-weight: bold;
 }
 
-.new-campus-button {
+.button {
+    border: none;
     cursor: pointer;
     color: white;
     background: #2ecefe;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
+}
+
+.errors {
+    color: red;
+}
+
+.messages {
+    color: green;
 }
