@@ -20,7 +20,7 @@ class Campuses extends Component {
         <div className="flex-container">
           {
           this.props.campuses.length > 0 ?
-          this.props.campuses.map((campus) => <CampusCard key={campus.id} { ...campus } />) :
+          this.props.campuses.map((campus, i) => <CampusCard key={i} { ...campus } />) :
           <span>No campuses to show</span>
           }
         </div>

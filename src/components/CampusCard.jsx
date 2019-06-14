@@ -19,10 +19,8 @@ class CampusCard extends Component {
           <Link className= "delete-campus-card" to={`/delete/campuses/${this.props.id}`}> delete</Link>
         </div>
       </div>
-
     );
   }
-
 }
 
 CampusCard.propTypes = {
